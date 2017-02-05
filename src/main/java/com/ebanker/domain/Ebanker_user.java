@@ -32,7 +32,7 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Korisnik.findByKorisnickoIme", query = "SELECT k FROM Korisnik k WHERE k.korisnickoIme = :korisnickoIme")
     , @NamedQuery(name = "Korisnik.findByAktivan", query = "SELECT k FROM Korisnik k WHERE k.aktivan = :aktivan")
     , @NamedQuery(name = "Korisnik.findByLozinka", query = "SELECT k FROM Korisnik k WHERE k.lozinka = :lozinka")})
-public class Korisnik implements Serializable {
+public class Ebanker_user implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -47,14 +47,14 @@ public class Korisnik implements Serializable {
     @Column(name = "lozinka")
     private String lozinka;
     @OneToMany(mappedBy = "korisnickoImekorisnickoIme")
-    private Set<Kartica> karticaSet;
+    private Set<Ebanker_card> karticaSet;
     @OneToMany(mappedBy = "korisnickoImekorisnickoIme")
-    private Set<Korisnikroles> korisnikrolesSet;
+    private Set<Ebanker_userroles> korisnikrolesSet;
 
-    public Korisnik() {
+    public Ebanker_user() {
     }
 
-    public Korisnik(String korisnickoIme) {
+    public Ebanker_user(String korisnickoIme) {
         this.korisnickoIme = korisnickoIme;
     }
 
@@ -83,20 +83,20 @@ public class Korisnik implements Serializable {
     }
 
     @XmlTransient
-    public Set<Kartica> getKarticaSet() {
+    public Set<Ebanker_card> getKarticaSet() {
         return karticaSet;
     }
 
-    public void setKarticaSet(Set<Kartica> karticaSet) {
+    public void setKarticaSet(Set<Ebanker_card> karticaSet) {
         this.karticaSet = karticaSet;
     }
 
     @XmlTransient
-    public Set<Korisnikroles> getKorisnikrolesSet() {
+    public Set<Ebanker_userroles> getKorisnikrolesSet() {
         return korisnikrolesSet;
     }
 
-    public void setKorisnikrolesSet(Set<Korisnikroles> korisnikrolesSet) {
+    public void setKorisnikrolesSet(Set<Ebanker_userroles> korisnikrolesSet) {
         this.korisnikrolesSet = korisnikrolesSet;
     }
 
@@ -110,10 +110,10 @@ public class Korisnik implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Korisnik)) {
+        if (!(object instanceof Ebanker_user)) {
             return false;
         }
-        Korisnik other = (Korisnik) object;
+        Ebanker_user other = (Ebanker_user) object;
         if ((this.korisnickoIme == null && other.korisnickoIme != null) || (this.korisnickoIme != null && !this.korisnickoIme.equals(other.korisnickoIme))) {
             return false;
         }

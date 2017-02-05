@@ -29,7 +29,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Krediti.findByVrstaKredita", query = "SELECT k FROM Krediti k WHERE k.vrstaKredita = :vrstaKredita")
     , @NamedQuery(name = "Krediti.findByNominalnaGodisnjaStopa", query = "SELECT k FROM Krediti k WHERE k.nominalnaGodisnjaStopa = :nominalnaGodisnjaStopa")
     , @NamedQuery(name = "Krediti.findByValuta", query = "SELECT k FROM Krediti k WHERE k.valuta = :valuta")})
-public class Krediti implements Serializable {
+public class Ebanker_loans implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -45,10 +45,10 @@ public class Krediti implements Serializable {
     @Column(name = "valuta")
     private String valuta;
 
-    public Krediti() {
+    public Ebanker_loans() {
     }
 
-    public Krediti(String vrstaKredita) {
+    public Ebanker_loans(String vrstaKredita) {
         this.vrstaKredita = vrstaKredita;
     }
 
@@ -86,10 +86,10 @@ public class Krediti implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Krediti)) {
+        if (!(object instanceof Ebanker_loans)) {
             return false;
         }
-        Krediti other = (Krediti) object;
+        Ebanker_loans other = (Ebanker_loans) object;
         if ((this.vrstaKredita == null && other.vrstaKredita != null) || (this.vrstaKredita != null && !this.vrstaKredita.equals(other.vrstaKredita))) {
             return false;
         }

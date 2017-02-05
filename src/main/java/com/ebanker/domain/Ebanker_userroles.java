@@ -31,7 +31,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Korisnikroles.findAll", query = "SELECT k FROM Korisnikroles k")
     , @NamedQuery(name = "Korisnikroles.findById", query = "SELECT k FROM Korisnikroles k WHERE k.id = :id")
     , @NamedQuery(name = "Korisnikroles.findByRola", query = "SELECT k FROM Korisnikroles k WHERE k.rola = :rola")})
-public class Korisnikroles implements Serializable {
+public class Ebanker_userroles implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -44,12 +44,12 @@ public class Korisnikroles implements Serializable {
     private String rola;
     @JoinColumn(name = "korisnickoIme_korisnickoIme", referencedColumnName = "korisnickoIme")
     @ManyToOne
-    private Korisnik korisnickoImekorisnickoIme;
+    private Ebanker_user korisnickoImekorisnickoIme;
 
-    public Korisnikroles() {
+    public Ebanker_userroles() {
     }
 
-    public Korisnikroles(Integer id) {
+    public Ebanker_userroles(Integer id) {
         this.id = id;
     }
 
@@ -69,11 +69,11 @@ public class Korisnikroles implements Serializable {
         this.rola = rola;
     }
 
-    public Korisnik getKorisnickoImekorisnickoIme() {
+    public Ebanker_user getKorisnickoImekorisnickoIme() {
         return korisnickoImekorisnickoIme;
     }
 
-    public void setKorisnickoImekorisnickoIme(Korisnik korisnickoImekorisnickoIme) {
+    public void setKorisnickoImekorisnickoIme(Ebanker_user korisnickoImekorisnickoIme) {
         this.korisnickoImekorisnickoIme = korisnickoImekorisnickoIme;
     }
 
@@ -87,10 +87,10 @@ public class Korisnikroles implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Korisnikroles)) {
+        if (!(object instanceof Ebanker_userroles)) {
             return false;
         }
-        Korisnikroles other = (Korisnikroles) object;
+        Ebanker_userroles other = (Ebanker_userroles) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }

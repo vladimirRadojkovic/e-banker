@@ -8,7 +8,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>xchanger</title>
+        <title>e-banker</title>
     </head>
     <body>
         <h1>Welcome to xchanger app :)</h1>

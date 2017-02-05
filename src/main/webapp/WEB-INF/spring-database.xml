@@ -24,21 +24,22 @@
         p:password="${jdbc.password}" />
 
     <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
-        <property name="dataSource" ref="dataSource" /> 
+        <property name="dataSource" ref="dataSource" />
         <property name="annotatedClasses">
         <list>
-           <value>com.ebanker.domain.Kartica</value>
-           <value>com.ebanker.domain.Korisnik</value>
-           <value>com.ebanker.domain.Korisnikpodaci</value>
-           <value>com.ebanker.domain.Korisnikroles</value>
-           <value>com.ebanker.domain.Krediti</value>
-           <value>com.ebanker.domain.Placanja</value>
-           <value>com.ebanker.domain.Transferi</value>
+           <value>com.ebanker.domain.Ebanker_card</value>
+           <value>com.ebanker.domain.Ebanker_user</value>
+           <value>com.ebanker.domain.Ebanker_userdetails</value>
+           <value>com.ebanker.domain.Ebanker_userroles</value>
+           <value>com.ebanker.domain.Ebanker_loans</value>
+           <value>com.ebanker.domain.Ebanker_payment</value>
+           <value>com.ebanker.domain.Ebanker_transfers</value>
         </list>
         </property>
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</prop> 
+                <prop key="hibernate.hbm2ddl.auto">update</prop> 
             </props>
         </property> 
     </bean> 
@@ -56,11 +57,11 @@
         </tx:attributes>
     </tx:advice>
     
-    <bean id="kartica" class="com.ebanker.domain.Kartica" />
-    <bean id="korisnik" class="com.ebanker.domain.Korisnik" />
-    <bean id="korisnikpodaci" class="com.ebanker.domain.Korisnikpodaci" />
-    <bean id="korisnikroles" class="com.ebanker.domain.Korisnikroles" />
-    <bean id="krediti" class="com.ebanker.domain.Krediti" />
-    <bean id="placanja" class="com.ebanker.domain.Placanja" />
-    <bean id="transferi" class="com.ebanker.domain.Transferi" />
+    <bean id="ebanker_card" class="com.ebanker.domain.Ebanker_card" />
+    <bean id="ebanker_user" class="com.ebanker.domain.Ebanker_user" />
+    <bean id="ebanker_userdetails" class="com.ebanker.domain.Ebanker_userdetails" />
+    <bean id="ebanker_userroles" class="com.ebanker.domain.Ebanker_userroles" />
+    <bean id="ebanker_loans" class="com.ebanker.domain.Ebanker_loans" />
+    <bean id="ebanker_payment" class="com.ebanker.domain.Ebanker_payment" />
+    <bean id="ebanker_transfers" class="com.ebanker.domain.Ebanker_transfers" />
 </beans>

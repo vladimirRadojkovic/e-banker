@@ -36,7 +36,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Korisnikpodaci.findByOperater", query = "SELECT k FROM Korisnikpodaci k WHERE k.operater = :operater")
     , @NamedQuery(name = "Korisnikpodaci.findByPrezime", query = "SELECT k FROM Korisnikpodaci k WHERE k.prezime = :prezime")
     , @NamedQuery(name = "Korisnikpodaci.findBySlika", query = "SELECT k FROM Korisnikpodaci k WHERE k.slika = :slika")})
-public class Korisnikpodaci implements Serializable {
+public class Ebanker_userdetails implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -74,10 +74,10 @@ public class Korisnikpodaci implements Serializable {
     @Column(name = "slika")
     private String slika;
 
-    public Korisnikpodaci() {
+    public Ebanker_userdetails() {
     }
 
-    public Korisnikpodaci(String korisnickoIme) {
+    public Ebanker_userdetails(String korisnickoIme) {
         this.korisnickoIme = korisnickoIme;
     }
 
@@ -171,10 +171,10 @@ public class Korisnikpodaci implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Korisnikpodaci)) {
+        if (!(object instanceof Ebanker_userdetails)) {
             return false;
         }
-        Korisnikpodaci other = (Korisnikpodaci) object;
+        Ebanker_userdetails other = (Ebanker_userdetails) object;
         if ((this.korisnickoIme == null && other.korisnickoIme != null) || (this.korisnickoIme != null && !this.korisnickoIme.equals(other.korisnickoIme))) {
             return false;
         }

@@ -29,18 +29,18 @@ import javax.xml.bind.annotation.XmlTransient;
  * @author vladi
  */
 @Entity
-@Table(name = "kartica")
+@Table(name = "ebanker_card")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Kartica.findAll", query = "SELECT k FROM Kartica k")
-    , @NamedQuery(name = "Kartica.findById", query = "SELECT k FROM Kartica k WHERE k.id = :id")
-    , @NamedQuery(name = "Kartica.findByNaziv", query = "SELECT k FROM Kartica k WHERE k.naziv = :naziv")
-    , @NamedQuery(name = "Kartica.findByOgranicenje", query = "SELECT k FROM Kartica k WHERE k.ogranicenje = :ogranicenje")
-    , @NamedQuery(name = "Kartica.findByOpis", query = "SELECT k FROM Kartica k WHERE k.opis = :opis")
-    , @NamedQuery(name = "Kartica.findByRokVazenja", query = "SELECT k FROM Kartica k WHERE k.rokVazenja = :rokVazenja")
-    , @NamedQuery(name = "Kartica.findBySaldo", query = "SELECT k FROM Kartica k WHERE k.saldo = :saldo")
-    , @NamedQuery(name = "Kartica.findByTekuciRacun", query = "SELECT k FROM Kartica k WHERE k.tekuciRacun = :tekuciRacun")})
-public class Kartica implements Serializable {
+    @NamedQuery(name = "Ebanker_card.findAll", query = "SELECT k FROM Ebanker_card k")
+    , @NamedQuery(name = "Ebanker_card.findById", query = "SELECT k FROM Ebanker_card k WHERE k.id = :id")
+    , @NamedQuery(name = "Ebanker_card.findByNaziv", query = "SELECT k FROM Ebanker_card k WHERE k.naziv = :naziv")
+    , @NamedQuery(name = "Ebanker_card.findByOgranicenje", query = "SELECT k FROM Ebanker_card k WHERE k.ogranicenje = :ogranicenje")
+    , @NamedQuery(name = "Ebanker_card.findByOpis", query = "SELECT k FROM Ebanker_card k WHERE k.opis = :opis")
+    , @NamedQuery(name = "Ebanker_card.findByRokVazenja", query = "SELECT k FROM Ebanker_card k WHERE k.rokVazenja = :rokVazenja")
+    , @NamedQuery(name = "Ebanker_card.findBySaldo", query = "SELECT k FROM Ebanker_card k WHERE k.saldo = :saldo")
+    , @NamedQuery(name = "Ebanker_card.findByTekuciRacun", query = "SELECT k FROM Ebanker_card k WHERE k.tekuciRacun = :tekuciRacun")})
+public class Ebanker_card implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -69,21 +69,21 @@ public class Kartica implements Serializable {
     @Column(name = "tekuciRacun")
     private String tekuciRacun;
     @OneToMany(mappedBy = "idKarticeid")
-    private Set<Transferi> transferiSet;
+    private Set<Ebanker_transfers> transferiSet;
     @JoinColumn(name = "korisnickoIme_korisnickoIme", referencedColumnName = "korisnickoIme")
     @ManyToOne
-    private Korisnik korisnickoImekorisnickoIme;
+    private Ebanker_user korisnickoImekorisnickoIme;
     @OneToMany(mappedBy = "idKarticeid")
-    private Set<Placanja> placanjaSet;
+    private Set<Ebanker_payment> placanjaSet;
 
-    public Kartica() {
+    public Ebanker_card() {
     }
 
-    public Kartica(Integer id) {
+    public Ebanker_card(Integer id) {
         this.id = id;
     }
 
-    public Kartica(Integer id, int ogranicenje, int saldo) {
+    public Ebanker_card(Integer id, int ogranicenje, int saldo) {
         this.id = id;
         this.ogranicenje = ogranicenje;
         this.saldo = saldo;
@@ -146,28 +146,28 @@ public class Kartica implements Serializable {
     }
 
     @XmlTransient
-    public Set<Transferi> getTransferiSet() {
+    public Set<Ebanker_transfers> getTransferiSet() {
         return transferiSet;
     }
 
-    public void setTransferiSet(Set<Transferi> transferiSet) {
+    public void setTransferiSet(Set<Ebanker_transfers> transferiSet) {
         this.transferiSet = transferiSet;
     }
 
-    public Korisnik getKorisnickoImekorisnickoIme() {
+    public Ebanker_user getKorisnickoImekorisnickoIme() {
         return korisnickoImekorisnickoIme;
     }
 
-    public void setKorisnickoImekorisnickoIme(Korisnik korisnickoImekorisnickoIme) {
+    public void setKorisnickoImekorisnickoIme(Ebanker_user korisnickoImekorisnickoIme) {
         this.korisnickoImekorisnickoIme = korisnickoImekorisnickoIme;
     }
 
     @XmlTransient
-    public Set<Placanja> getPlacanjaSet() {
+    public Set<Ebanker_payment> getPlacanjaSet() {
         return placanjaSet;
     }
 
-    public void setPlacanjaSet(Set<Placanja> placanjaSet) {
+    public void setPlacanjaSet(Set<Ebanker_payment> placanjaSet) {
         this.placanjaSet = placanjaSet;
     }
 
@@ -181,10 +181,10 @@ public class Kartica implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Kartica)) {
+        if (!(object instanceof Ebanker_card)) {
             return false;
         }
-        Kartica other = (Kartica) object;
+        Ebanker_card other = (Ebanker_card) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }

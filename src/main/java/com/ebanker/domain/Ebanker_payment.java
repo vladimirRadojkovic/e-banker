@@ -45,7 +45,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Placanja.findByRacunUplatioca", query = "SELECT p FROM Placanja p WHERE p.racunUplatioca = :racunUplatioca")
     , @NamedQuery(name = "Placanja.findBySifraPlacanja", query = "SELECT p FROM Placanja p WHERE p.sifraPlacanja = :sifraPlacanja")
     , @NamedQuery(name = "Placanja.findBySvrhaPlacanja", query = "SELECT p FROM Placanja p WHERE p.svrhaPlacanja = :svrhaPlacanja")})
-public class Placanja implements Serializable {
+public class Ebanker_payment implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -98,16 +98,16 @@ public class Placanja implements Serializable {
     private String svrhaPlacanja;
     @JoinColumn(name = "idKartice_id", referencedColumnName = "id")
     @ManyToOne
-    private Kartica idKarticeid;
+    private Ebanker_card idKarticeid;
 
-    public Placanja() {
+    public Ebanker_payment() {
     }
 
-    public Placanja(Integer id) {
+    public Ebanker_payment(Integer id) {
         this.id = id;
     }
 
-    public Placanja(Integer id, int iznos) {
+    public Ebanker_payment(Integer id, int iznos) {
         this.id = id;
         this.iznos = iznos;
     }
@@ -232,11 +232,11 @@ public class Placanja implements Serializable {
         this.svrhaPlacanja = svrhaPlacanja;
     }
 
-    public Kartica getIdKarticeid() {
+    public Ebanker_card getIdKarticeid() {
         return idKarticeid;
     }
 
-    public void setIdKarticeid(Kartica idKarticeid) {
+    public void setIdKarticeid(Ebanker_card idKarticeid) {
         this.idKarticeid = idKarticeid;
     }
 
@@ -250,10 +250,10 @@ public class Placanja implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Placanja)) {
+        if (!(object instanceof Ebanker_payment)) {
             return false;
         }
-        Placanja other = (Placanja) object;
+        Ebanker_payment other = (Ebanker_payment) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
