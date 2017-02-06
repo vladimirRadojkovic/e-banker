@@ -64,4 +64,5 @@
     <bean id="ebanker_loans" class="com.ebanker.domain.EbankerLoans" />
     <bean id="ebanker_payment" class="com.ebanker.domain.EbankerPayment" />
     <bean id="ebanker_transfer" class="com.ebanker.domain.EbankerTransfer" />
+    <bean id="userService" class="com.ebanker.service.impl.UserService"/>
 </beans>

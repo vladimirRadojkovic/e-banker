@@ -43,7 +43,7 @@
         </authentication-provider>
     </authentication-manager>
     
-    <beans:bean id="redirectHandler" class="com.mybank.service.impl.RedirectService">
+    <beans:bean id="redirectHandler" class="com.ebanker.service.impl.RedirectService">
         <beans:property name="roleUrlMap">
             <beans:map>
                 <beans:entry key="ROLE_USER" value="/pocetna"/>
