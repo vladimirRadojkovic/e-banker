@@ -8,6 +8,7 @@
         <param-value>
             /WEB-INF/applicationContext.xml,
             /WEB-INF/spring-database.xml
+            /WEB-INF/spring-localization.xml
         </param-value>
     </context-param>
     <listener>
