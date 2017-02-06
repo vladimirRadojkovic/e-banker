@@ -11,7 +11,6 @@
         <title>e-banker</title>
     </head>
     <body>
-        <h1>Welcome to xchanger app :)</h1>
-        <h1>Welcome to xchanger app test branch</h1>
+        <h1>Welcome to ebanker app :)</h1>
     </body>
 </html>
