@@ -8,7 +8,9 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.stereotype.Service;
 
+@Service
 public class RedirectService implements AuthenticationSuccessHandler {
 
     private Map<String, String> roleUrlMap;

@@ -1,5 +1,7 @@
 package com.ebanker.service.impl;
 
+import com.ebanker.domain.EbankerUser;
+import com.ebanker.domain.EbankerUserRoles;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -13,37 +15,37 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.ebanker.dao.EbankerUserDao;
 
 @Service
 public class UserService implements UserDetailsService {
 
-//    @Autowired
-//    private UserDao userDao;
+    @Autowired
+    private EbankerUserDao userDao;
 
     @Override
     public UserDetails loadUserByUsername(final String username) throws UsernameNotFoundException {
 
-//        Korisnik korisnik = getUserDao().findByUserName(username);
-//        List<GrantedAuthority> authoritys = buildUserAuthority(korisnik.getKorisnikRole());
-//        User user = new User(korisnik.getKorisnickoIme(), korisnik.getLozinka(), authoritys);
-//        return user;
-return null;
+        EbankerUser korisnik = getUserDao().findUserByUsername(username);
+        List<GrantedAuthority> authoritys = buildUserAuthority(korisnik.getEbankerUserRolesSet());
+        User user = new User(korisnik.getUserUsername(), korisnik.getUserPassword(), authoritys);
+        return user;
     }
 
-//    private List<GrantedAuthority> buildUserAuthority(Set<KorisnikRoles> userRoles) {
-//        List<GrantedAuthority> setAuthorities = new ArrayList<>();
-//        for (KorisnikRoles userRole : userRoles) {
-//            setAuthorities.add(new SimpleGrantedAuthority(userRole.getRola()));
-//        }
-//        return setAuthorities;
+    private List<GrantedAuthority> buildUserAuthority(Set<EbankerUserRoles> userRoles) {
+        List<GrantedAuthority> setAuthorities = new ArrayList<>();
+        for (EbankerUserRoles userRole : userRoles) {
+            setAuthorities.add(new SimpleGrantedAuthority(userRole.getUserRolesRoleName()));
+        }
+        return setAuthorities;
     }
 
-//    public UserDao getUserDao() {
-//        return userDao;
-//    }
-//
-//    public void setUserDao(UserDao userDao) {
-//        this.userDao = userDao;
-//    }
+    public EbankerUserDao getUserDao() {
+        return userDao;
+    }
 
-//}
+    public void setUserDao(EbankerUserDao userDao) {
+        this.userDao = userDao;
+    }
+
+}

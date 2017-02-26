@@ -25,11 +25,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Table(name = "ebanker_loans")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "EbankerLoans.findAll", query = "SELECT e FROM EbankerLoans e")
-    , @NamedQuery(name = "EbankerLoans.findByLoansLoanType", query = "SELECT e FROM EbankerLoans e WHERE e.loansLoanType = :loansLoanType")
-    , @NamedQuery(name = "EbankerLoans.findByLoansInterestRate", query = "SELECT e FROM EbankerLoans e WHERE e.loansInterestRate = :loansInterestRate")
-    , @NamedQuery(name = "EbankerLoans.findByLoansLoanCurrency", query = "SELECT e FROM EbankerLoans e WHERE e.loansLoanCurrency = :loansLoanCurrency")})
-public class EbankerLoans implements Serializable {
+    @NamedQuery(name = "EbankerLoan.findAll", query = "SELECT e FROM EbankerLoan e")
+    , @NamedQuery(name = "EbankerLoan.findByLoansLoanType", query = "SELECT e FROM EbankerLoan e WHERE e.loansLoanType = :loansLoanType")
+    , @NamedQuery(name = "EbankerLoan.findByLoanInterestRate", query = "SELECT e FROM EbankerLoan e WHERE e.loansInterestRate = :loansInterestRate")
+    , @NamedQuery(name = "EbankerLoan.findByLoansLoanCurrency", query = "SELECT e FROM EbankerLoan e WHERE e.loansLoanCurrency = :loansLoanCurrency")})
+public class EbankerLoan implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -45,10 +45,10 @@ public class EbankerLoans implements Serializable {
     @Column(name = "loans_loan_currency")
     private String loansLoanCurrency;
 
-    public EbankerLoans() {
+    public EbankerLoan() {
     }
 
-    public EbankerLoans(String loansLoanType) {
+    public EbankerLoan(String loansLoanType) {
         this.loansLoanType = loansLoanType;
     }
 
@@ -86,10 +86,10 @@ public class EbankerLoans implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof EbankerLoans)) {
+        if (!(object instanceof EbankerLoan)) {
             return false;
         }
-        EbankerLoans other = (EbankerLoans) object;
+        EbankerLoan other = (EbankerLoan) object;
         if ((this.loansLoanType == null && other.loansLoanType != null) || (this.loansLoanType != null && !this.loansLoanType.equals(other.loansLoanType))) {
             return false;
         }
@@ -100,5 +100,5 @@ public class EbankerLoans implements Serializable {
     public String toString() {
         return "com.ebanker.domain.EbankerLoans[ loansLoanType=" + loansLoanType + " ]";
     }
-    
+
 }
