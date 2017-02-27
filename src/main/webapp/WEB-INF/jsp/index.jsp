@@ -15,7 +15,8 @@
     <body onload="slowShow()" class="animate" >
         <div id="wrapper">
             <div id="dobrodosli">
-    
+                <p><spring:message code="welcome"/></p>
+                <h2><spring:message code="pleaselogin"/></h2>
             </div>
             <%@include file="/resources/template/message.html" %>
             <c:url var="login_url"  value="/j_spring_security_check" />
@@ -24,29 +25,29 @@
                   method="POST"
                   name="login">
                 <div class="form-group">
-                    <label></label>
+                    <label><spring:message code="username"/></label>
                     <br>
                     <input type="text" name="username" class="form-control" required="" />
                 </div>
                 <br>
                 <div class="form-group">
-                    <label></label>
+                    <label><spring:message code="password"/></label>
                     <br>
                     <input type="password" name="password" class="form-control" required=""/>
                 </div>
                 <br>
                 <br>
-                <input type="submit" class="btn btn-default" value="" />
+                <input type="submit" class="btn btn-default" value="<spring:message code="login"/>" />
                 <br>
                 <br>
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
             </form>
             <p>
                 <em>
-                    
+                    <spring:message code="firsttime"/>
                 </em>
             </p>
-            <a class="btn btn-default" href="${pageContext.request.contextPath}/aktivirajServis"></a>
+            <a class="btn btn-default" href="${pageContext.request.contextPath}/aktivirajServis"><spring:message code="activationservis"/></a>
         </div><!--end of wrapper-->
         <div id="lokalizacija">
             <h5>
