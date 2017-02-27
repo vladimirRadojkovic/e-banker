@@ -6,8 +6,8 @@
 package com.ebanker.service;
 
 import com.ebanker.domain.EbankerUser;
-import com.ebanker.model.BrisanjeKorisnikaModel;
-import com.ebanker.model.UnosKorisnikaModel;
+import com.ebanker.model.RemoveUserModel;
+import com.ebanker.model.InsertUserModel;
 import java.util.List;
 import org.springframework.security.core.userdetails.User;
 
@@ -17,17 +17,17 @@ import org.springframework.security.core.userdetails.User;
  */
 public interface UserService {
 
-    public UnosKorisnikaModel getKorisnikByUsername(String userName);
+    public InsertUserModel getKorisnikByUsername(String userName);
 
     public EbankerUser getKorisnik(User user);
 
     public List<EbankerUser> getKorisnikList();
 
-    public void registerKorisnik(UnosKorisnikaModel korisnikModel);
+    public void registerKorisnik(InsertUserModel korisnikModel);
 
-    public void removeKorisnik(BrisanjeKorisnikaModel brisanjeKorisnikaModel);
+    public void removeKorisnik(RemoveUserModel brisanjeKorisnikaModel);
 
-    public void izmeniKorisnika(UnosKorisnikaModel unosKorisnikaModel);
+    public void izmeniKorisnika(InsertUserModel unosKorisnikaModel);
 
     public EbankerUser getKorisnikByLetter(String key);
 

@@ -4,69 +4,69 @@ import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.Email;
 import org.springframework.format.annotation.NumberFormat;
 
-public class UnosKorisnikaModel {
+public class InsertUserModel {
 
     @Size(min = 3, max = 20)
-    private String ime;
+    private String name;
     @Size(min = 3, max = 20)
-    private String prezime;
+    private String surname;
     @Size(min = 3, max = 20)
-    private String korisnickoIme;
+    private String username;
     @Email
     private String email;
     @NumberFormat
     private String jmbg;
     @NumberFormat
     @Size(min = 3, max = 20)
-    private String brTelefona;
+    private String phoneNo;
     @Size(min = 3, max = 50)
-    private String adresa;
+    private String adress;
     @Size(min = 3, max = 20)
-    private String mesto;
+    private String residence;
     @Size(min = 3, max = 20)
     private String operater;
-    private String rola;
+    private String role;
 
     /**
-     * @return the ime
+     * @return the name
      */
-    public String getIme() {
-        return ime;
+    public String getName() {
+        return name;
     }
 
     /**
-     * @param ime the ime to set
+     * @param name the name to set
      */
-    public void setIme(String ime) {
-        this.ime = ime;
+    public void setName(String name) {
+        this.name = name;
     }
 
     /**
-     * @return the prezime
+     * @return the surname
      */
-    public String getPrezime() {
-        return prezime;
+    public String getSurname() {
+        return surname;
     }
 
     /**
-     * @param prezime the prezime to set
+     * @param surname the surname to set
      */
-    public void setPrezime(String prezime) {
-        this.prezime = prezime;
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
     /**
      * @return the korisniickoIme
      */
-    public String getKorisnickoIme() {
-        return korisnickoIme;
+    public String getUsername() {
+        return username;
     }
 
     /**
      * @param korisniickoIme the korisniickoIme to set
      */
-    public void setKorisnickoIme(String korisnickoIme) {
-        this.korisnickoIme = korisnickoIme;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     /**
@@ -98,45 +98,45 @@ public class UnosKorisnikaModel {
     }
 
     /**
-     * @return the brTelefona
+     * @return the phoneNo
      */
-    public String getBrTelefona() {
-        return brTelefona;
+    public String getPhoneNo() {
+        return phoneNo;
     }
 
     /**
-     * @param brTelefona the brTelefona to set
+     * @param phoneNo the phoneNo to set
      */
-    public void setBrTelefona(String brTelefona) {
-        this.brTelefona = brTelefona;
+    public void setPhoneNo(String phoneNo) {
+        this.phoneNo = phoneNo;
     }
 
     /**
-     * @return the adresa
+     * @return the adress
      */
-    public String getAdresa() {
-        return adresa;
+    public String getAdress() {
+        return adress;
     }
 
     /**
-     * @param adresa the adresa to set
+     * @param adress the adress to set
      */
-    public void setAdresa(String adresa) {
-        this.adresa = adresa;
+    public void setAdress(String adress) {
+        this.adress = adress;
     }
 
     /**
-     * @return the mesto
+     * @return the residence
      */
-    public String getMesto() {
-        return mesto;
+    public String getResidence() {
+        return residence;
     }
 
     /**
-     * @param mesto the mesto to set
+     * @param residence the residence to set
      */
-    public void setMesto(String mesto) {
-        this.mesto = mesto;
+    public void setResidence(String residence) {
+        this.residence = residence;
     }
 
     /**
@@ -154,17 +154,17 @@ public class UnosKorisnikaModel {
     }
 
     /**
-     * @return the rola
+     * @return the role
      */
-    public String getRola() {
-        return rola;
+    public String getRole() {
+        return role;
     }
 
     /**
-     * @param rola the rola to set
+     * @param role the role to set
      */
-    public void setRola(String rola) {
-        this.rola = rola;
+    public void setRole(String role) {
+        this.role = role;
     }
 
 }

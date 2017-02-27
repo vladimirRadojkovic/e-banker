@@ -13,7 +13,7 @@ import org.springframework.format.annotation.NumberFormat;
  *
  * @author Vladimir
  */
-public class UplatnicaModel {
+public class PaymentModel {
 
     private String sifraPlacanja;
     @Size(min = 2, max = 7)

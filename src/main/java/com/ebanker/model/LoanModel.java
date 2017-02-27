@@ -13,7 +13,7 @@ import org.springframework.format.annotation.NumberFormat;
  *
  * @author Vladimir
  */
-public class KreditiModel {
+public class LoanModel {
 
     @Size(min = 5, max = 30)
     private String vrstaKredita;

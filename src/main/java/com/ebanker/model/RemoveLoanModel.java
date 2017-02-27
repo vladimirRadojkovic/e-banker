@@ -9,6 +9,6 @@ package com.ebanker.model;
  *
  * @author Vladimir
  */
-public class BrisanjeKreditaModel {
+public class RemoveLoanModel {
     
 }

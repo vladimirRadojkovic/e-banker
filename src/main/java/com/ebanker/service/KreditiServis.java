@@ -6,7 +6,7 @@
 package com.ebanker.service;
 
 import com.ebanker.domain.EbankerLoan;
-import com.ebanker.model.KreditiModel;
+import com.ebanker.model.LoanModel;
 import java.util.List;
 
 /**
@@ -17,9 +17,9 @@ public interface KreditiServis {
 
     public List<EbankerLoan> getListOfLoans();
 
-    public KreditiModel izabraniKredit(String name);
+    public LoanModel izabraniKredit(String name);
 
-    public void unesiNoviKredit(KreditiModel kreditiModel);
+    public void unesiNoviKredit(LoanModel kreditiModel);
 
     public void obrisiKredit(String kreditZaBrisanje);
 

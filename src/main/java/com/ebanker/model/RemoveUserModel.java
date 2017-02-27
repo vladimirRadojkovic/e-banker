@@ -9,7 +9,7 @@ package com.ebanker.model;
  *
  * @author Vladimir
  */
-public class BrisanjeKorisnikaModel {
+public class RemoveUserModel {
 
     private String ime;
 

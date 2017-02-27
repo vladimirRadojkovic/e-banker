@@ -5,8 +5,8 @@
  */
 package com.ebanker.service;
 
-import com.ebanker.model.BrisanjeKarticeModel;
-import com.ebanker.model.KarticaModel;
+import com.ebanker.model.RemoveCardModel;
+import com.ebanker.model.CardModel;
 import java.util.List;
 
 /**
@@ -15,13 +15,13 @@ import java.util.List;
  */
 public interface CardService {
 
-    public void insertCard(KarticaModel karticaModel);
+    public void insertCard(CardModel karticaModel);
 
-    public List<KarticaModel> getCardByUserName(String name);
+    public List<CardModel> getCardByUserName(String name);
 
-    public KarticaModel getCardByTr(String tr);
+    public CardModel getCardByTr(String tr);
 
-    public void updateCard(KarticaModel karticaModel);
+    public void updateCard(CardModel karticaModel);
 
-    public void removeCard(BrisanjeKarticeModel brisanjeKarticeModel);
+    public void removeCard(RemoveCardModel brisanjeKarticeModel);
 }

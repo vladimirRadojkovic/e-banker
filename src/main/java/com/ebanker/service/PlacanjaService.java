@@ -6,7 +6,7 @@
 package com.ebanker.service;
 
 import com.ebanker.domain.EbankerPayment;
-import com.ebanker.model.UplatnicaModel;
+import com.ebanker.model.PaymentModel;
 
 /**
  *
@@ -14,7 +14,7 @@ import com.ebanker.model.UplatnicaModel;
  */
 public interface PlacanjaService {
 
-    public boolean sendSlipData(String nazivPlatioca, String adresaPlatioca, String mestoPlatioca, String datumIzvrsenja, UplatnicaModel uplatnicaModel);
+    public boolean sendSlipData(String nazivPlatioca, String adresaPlatioca, String mestoPlatioca, String datumIzvrsenja, PaymentModel uplatnicaModel);
 
     public EbankerPayment getPlacanjeById(String redBr);
 
