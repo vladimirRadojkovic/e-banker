@@ -31,7 +31,7 @@
            <value>com.ebanker.domain.EbankerUser</value>
            <value>com.ebanker.domain.EbankerUserDetails</value>
            <value>com.ebanker.domain.EbankerUserRoles</value>
-           <value>com.ebanker.domain.EbankerLoans</value>
+           <value>com.ebanker.domain.EbankerLoan</value>
            <value>com.ebanker.domain.EbankerPayment</value>
            <value>com.ebanker.domain.EbankerTransfer</value>
         </list>
@@ -61,7 +61,7 @@
     <bean id="ebanker_user" class="com.ebanker.domain.EbankerUser" />
     <bean id="ebanker_user_details" class="com.ebanker.domain.EbankerUserDetails" />
     <bean id="ebanker_user_roles" class="com.ebanker.domain.EbankerUserRoles" />
-    <bean id="ebanker_loans" class="com.ebanker.domain.EbankerLoans" />
+    <bean id="ebanker_loans" class="com.ebanker.domain.EbankerLoan" />
     <bean id="ebanker_payment" class="com.ebanker.domain.EbankerPayment" />
     <bean id="ebanker_transfer" class="com.ebanker.domain.EbankerTransfer" />
 </beans>
