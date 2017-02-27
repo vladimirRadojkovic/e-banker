@@ -26,9 +26,9 @@ public class UserService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(final String username) throws UsernameNotFoundException {
 
-        EbankerUser korisnik = getUserDao().findUserByUsername(username);
-        List<GrantedAuthority> authoritys = buildUserAuthority(korisnik.getEbankerUserRolesSet());
-        User user = new User(korisnik.getUserUsername(), korisnik.getUserPassword(), authoritys);
+        EbankerUser ebankerUser = getUserDao().findUserByUsername(username);
+        List<GrantedAuthority> authoritys = buildUserAuthority(ebankerUser.getEbankerUserRolesSet());
+        User user = new User(ebankerUser.getUserUsername(), ebankerUser.getUserPassword(), authoritys);
         return user;
     }
 

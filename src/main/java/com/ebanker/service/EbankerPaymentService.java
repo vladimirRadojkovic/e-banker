@@ -12,7 +12,7 @@ import com.ebanker.model.PaymentModel;
  *
  * @author Vladimir
  */
-public interface PlacanjaService {
+public interface EbankerPaymentService {
 
     public boolean sendSlipData(String nazivPlatioca, String adresaPlatioca, String mestoPlatioca, String datumIzvrsenja, PaymentModel uplatnicaModel);
 

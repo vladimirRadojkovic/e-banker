@@ -12,7 +12,7 @@ import com.ebanker.model.TransferModel;
  *
  * @author Vladimir
  */
-public interface TransferService {
+public interface EbankerTransferService {
 
     public boolean startTransfer(TransferModel transferModel, String datum);
 

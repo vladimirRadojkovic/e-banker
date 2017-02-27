@@ -13,7 +13,7 @@ import java.util.List;
  *
  * @author Vladimir
  */
-public interface CardService {
+public interface EbankerCardService {
 
     public void insertCard(CardModel karticaModel);
 

@@ -13,7 +13,7 @@ import java.util.List;
  *
  * @author Vladimir
  */
-public interface KreditiServis {
+public interface EbankerLoanService {
 
     public List<EbankerLoan> getListOfLoans();
 

@@ -15,7 +15,7 @@ import org.springframework.security.core.userdetails.User;
  *
  * @author Vladimir
  */
-public interface UserService {
+public interface EbankerUserService {
 
     public InsertUserModel getKorisnikByUsername(String userName);
 
